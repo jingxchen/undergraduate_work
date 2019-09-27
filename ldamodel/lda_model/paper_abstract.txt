@@ -1,0 +1,199 @@
+adhesion molecules  aging  CAD  freshly isolated mouse endothelial cells  inflammation  mouse model of atherosclerosis
+Brucella  Cloning  Immune Reactivity  ELISA  Protein Expression  Purification
+FAIM2  Single nucleotide polymorphism  Obesity susceptibility
+C
+&#x003bc;-Calpain  Endothelial dysfunction  Nitric oxide-mediated vascular relaxation  Diabetes
+social risk  rabies  vaccination  the theory of planned behavior
+Environmental exposure  Leptospira interrogans  leptospirosis  peri-urban transmission  rodent transmission  zoonoses
+Anopheles arabiensis  Ecological niche model  Climate change
+Cytokines  HNSCC  IL-17  IL-23  Inflammation  Oral cancer  Premalignant lesions
+adaptive variation  environmental correlation  jack pine (Pinus banksiana)  lodgepole pine (Pinus contorta var. latifolia)  outlier detection  selection
+Human prion diseases  Iatrogenic Creutzfeldt-Jakob disease  Sporadic CJD
+regressive evolution  opsin  pleiotropy  pseudogene  Bidessini  Hydroporini
+pedagogical agent  temporal contingency  gaze interaction  educational technology  embodied artificial agent
+population dynamics  mortality  salmon  river temperature
+cisplatin  chemotherapy  side effect  protein kinase C &#x003b4;
+fetus  screening  congenital heart disease  echocardiography  three- and four-dimensional ultrasound  spatiotemporal image correlation
+Q
+Q
+A Disintegrin and Metalloproteinase  ADAM12  ADAM12-S  Breast cancer  Cancer biomarker
+Bursaphelenchus  Cellulases  Horizontal gene transfer  Ascomycota  Fungi
+Bronchodilators  COPD  Dyspnea  Glycopyrronium bromide  Inspiratory capacity  Lung hyperinflation
+Alternative splicing  RNA-seq  De Bruijn graphs   Bubbles  Enumeration algorithms
+Postural sway  Physical function  Middle age
+Bronchiectasis  Bronchomalacia  Williams-campbell syndrome
+well-being  girl  gender  descriptive  content analysis
+Autotelic personality  Flow experience  Inferiority feelings  Mental health  Negative emotion
+Coronary artery disease  Inflammation  Neutrophil-to-lymphocyte ratio  Red cell distribution width  White blood cell
+allele-specific gene expression  allelic imbalance  gene expression  mapping bias  RNA-seq
+smartphone  technology  education  medicine  app  health care  Android  iPhone  BlackBerry  mobile phone  standards
+Cuprous oxide  Hollow spheres  Surfactant-free  Photocatalysis  LED cold light sources
+Polyacrylonitrile  Graphene  Pyrolysis  Graphene flake  Nickel
+Dye-sensitized solar cells  p-type  Counter electrodes  Nanosheets  Ternary sulfides
+Electrical resistance  Atomic force microscopy  Nanoprocessing  Mechanical processing
+Anaemia  Bleeding  Clauss method  Fibrinogen concentrate  Goal directed therapy  Massive transfusion protocol  Thromboelastometry  ROTEM  Thromboelastography  TEG  FIBTEM  Transfusion
+Modified shock index  Shock index  Trauma  Trauma patients
+Anatomic variation  Nerve injury  Thyroid  Vocal cord palsy
+Colorectal neoplasms  Stents  Intestinal obstruction  Aged
+Rehabilitation  Myocardial Infarction  Electrocardiogram
+Idiopathic generalized epilepsy  Generalized spike-wave discharge  EEG  fMRI  Independent component analysis  Granger Causality  Functional connectivity  Directed transfer function (DTF)  Adaptive directed transfer function (ADTF)
+Magnetoencephalography  Mild Cognitive Impairment  Functional connectivity  Data mining  Machine learning  Synaptic dysfunction  Multicenter study
+Multiple sclerosis  Migraine MRI  Contrast-enhancing lesions  Controls
+Africa  cytokine production  IL-10 gene  innate immunity  muscle strength
+Robotic surgical procedures  Rectal neoplasms
+Endoscopic surgical procedure  Transanal endoscopic microsurgery  Rectal neoplasms  Local excision  Costs and cost analysis
+Left ventricular noncompaction  Left ventricular aneurysm
+Chicken  carbonic anhydrase III; Muscular dystrophy; Avian disease; ELISA; Immunohistochemistry
+Prostate cancer  Prognosis  RECK  Micro RNA  Metaloproteinases
+butyrate  flagellin  metatranscriptomics  mucin  recovery
+Graphene  Low energy electron microscope (LEEM)  Self-assembly  Organic thin film  Sexiphenyl(6P)  LEED  Iridium
+Melanocortin-4 receptor  naturally occurring mutation  extracellular signal-regulated kinases 1 and 2 signaling  biased signaling.
+Isoprenoids  Protein solubility  Deoxyxylulose phosphate pathway  Activity analysis  Metabolic engineering
+protein kinase D1  estrogen receptor &#x003b1;  breast cancer  proliferation  invasion  antiestrogen therapy
+Joint modeling  Multivariate longitudinal outcomes  Random coefficients
+Acute heart failure  hFABP  Mortality  NT-proBNP  Prognosis  Rehospitalisation  Troponin I
+Insecta  male genitalia  Oriental Biogeographic Region  East Palearctic Biogeographic Region  stream
+Obesity  American indians  Body Mass Index (BMI)  Childhood trauma
+clipping  coiling  instrumental variable  statewide planning and research cooperative system  unruptured cerebral aneurysm
+RNP-4F  snRNA Secondary Structure  U4-/U6-snRNA Phylogeny  Spliceosome Evolution
+cellular networks  hematopoiesis  intercellular signaling  self-renewal  stem cells
+Supervised smoking facility  Crack  VANDU  Hepatitis C  Downtown Eastside
+Acromegaly  sleep  sleep apnea  sleep-disordered breathing  growth hormone.
+Arabidopsis  flower  intron  transcriptome  translation
+CHIP  Hsp90  ROS  SENP3  ubiquitin
+abiotic stress  biotic stress  crop improvement  functional genomics  post transcriptional gene silencing  siRNA.
+traumatic brain injury  TBI  brain development  neuroimaging  neurodegeneration  neuropsychiatric disorders
+systems consolidation  multiple trace theory  pattern separation  pattern completion  interference  episodic memory  semantic memory  competition
+brain laterality  animal model of schizophrenia  aging  myelin-associated protein  cortex
+endovascular repair  aortic dissection  proximal Landing Zone
+Controlled Hemorrhage  Resuscitation  Cardiac Output  Physiologic Reserve  Immature Domestic Swine
+Amitriptyline  Carrageenan  Edema  Intracerebroventricular  Intrathecal
+Osteoporosis  Glucocorticoids  Bone mineral density  Fractures  Rheumatic diseases
+Overtraining  Overreaching. Mood states  Blood and Biochemical analysis  Questionnaire
+Chronic Thromboembolic Pulmonary Hypertension  Pulmonary Arterial Hypertension  Pulmonary Thromboendarterectomy  Pulmonary Hemodynamics  Schistosomiasis
+Hypothyroidism  Learning  Memory  Nitric Oxide  Offspring
+Exercise  Immune System  Neutrophils  Macrophages  Phagocytic Capacity
+Capillary physiology  mechanical force  microcirculation  water permeability
+Akt  diabetes  disuse atrophy  nerve transection
+AST-120  indoxyl sulfate  microRNA 21  microRNA 29b  myocardial infarction  uremic toxin
+HIV-1 tat  DNA-PKcs
+BRCA2  CD24  FANCD2  Fanconi anemia  RAD51c
+e-health  evidence  innovation  review  telehealth  telecare
+Chemical alarm cues  coral degradation  coral reefs  Pomacentrus amboinensis  predation  Pseudochromis fuscus
+Knee  Total knee arthroplasty  Posterior cruciate-retaining  Posterior cruciate-substituting  High-flex implant
+Emerging pathogen  Fusobacterium necrophorum  Lemi&#x000e8;rre's syndrome  otitis  sinusitis
+ABC transporter  cell specificity  floral fragrance  petunia  transcription factor
+Adolescent rheumatology  Transition clinic  Transfer  Young adult
+Early Alzheimer's disease  individual diagnosis  mild cognitive impairment  magnetic resonance imaging (MRI)  cognitive reserve
+Anti-biofilm enzyme  Bacterial depolymerase  Phage depolymerase  Enzyme kinetics  Gentamicin
+Omega-3 fatty acid  Mucositis  Intestinal damage
+Endocytosis  pollen tube growth  SNARE  VAMP7
+Calcite  ACC  CaCO<sub>3</sub>  FTIR  Synchrotron  Amino acids  Earthworms  Stability
+Periampullary adenocarcinoma  Pancreatic cancer  Podocalyxin-like 1  Immunohistochemistry  Biomarkers  Prognosis  Response prediction
+Spatial analysis  Hot spots  Cold spots  Mental health  Depression  Catalonia
+Mitral valve  Heart aneurysm  Mitral valve annuloplasty  Echocardiography
+Erythema nodosum leprosum  Immune reconstitution inflammatory syndrome  lepromatous leprosy
+Fetal Alcohol Spectrum Disorders  L1 Neural Cell Adhesion Molecule  Lipid Raft  Ethanol
+sex ratio  competition  sexual selection  sex roles  Makushi&#x02013;Guyana
+axonal degeneration  gliosis  Japanese black cattle  optic pathway degeneration
+autophagy  LC3  mTOR  placenta  starvation
+capital-income breeding  penguin monitoring system  parental investment  timing of laying  breeding success  seabirds
+membrane bioreactor  activated sludge  isolation of bacteria  violacein assay  &#x003b2;-galactosidase assay  quorum sensing signals  biofilm formation
+alexithymia  facial expressions  emotions  face perception  eating disorders
+Retina  Genetics  Degeneration
+botulinum toxin  prostate  BPH
+somatoform disorders  unexplained physical symptoms  somatization  amplification  alexithymia  cognitive model  cytokine
+Culture  Caregiving  Grooming  Socialization  Social change
+endurance athlete  electrocardiography  genetic analysis
+Chiari's networks  Surgical procedure  Right atrium
+Smac/DIABLO  bladder cancer  prognosis
+temperature  breeding phenology  egg-laying date  clutch size  tipulids
+Aorta  surgery; Bypass
+pan-genome  core genes  flexible genes  Epsilonproteobacteria  Sulfurimonas  Helicobacter  Campylobacter
+performance curves  locomotor performance  performance breadth  individual variation  environmental variability
+chunking  working memory  prosody  ERP  N400  P300
+language evolution  evolutionary game theory  communication  universal grammar  models  theoretical
+retrospective memory  semantic memory  episodic memory  general knowledge of the world  public events
+social networks  hierarchies  behavioural ecology  social behaviour
+ginseng  ginsenosides  ion channels and receptors  interaction site(s)  nervous system
+arterial stiffness  blood pressure  exercise  wave reflection
+COPD  skeletal muscle  deconditioning  muscle fiber types  mytochondria  protein balance
+skin sympathetic nerve activity  emotional processing  sex differences  sweat release  microneurography
+Jatropha curcas  Curcin  RNAi  Marker-free transformation  Gene silencing  Detoxification
+Personality disorder  Classification  Severity  Treatment
+Schizophrenia  Gender  Sex  Psychopathology  Cross-cultural
+Esophageal disease  Surgery  esophagus  Killian-Jamieson diverticulum
+Brain slice method  Unbound volume of distribution in the brain  Neuropharmacokinetics  Drug discovery  High-throughput screening
+Tn5/IS50  Hfq  Crp  SgrS  DNA transposition
+Acute respiratory tract infection  algorithm  children
+Intralipid<sup>&#x000ae;</sup> and heparin  Adiponectin  Leptin  ASP/C3adesARG  Lean normotensives  Metabolic syndrome subjects
+D-glucose  MCF-7 cells  Cytotoxic  DNA damage  Apoptosis
+ART  PMTCT  HIV  Women  Ghana
+Nrf2  Keap1  HepG2 cell  drug metabolizing enzyme  drug transporter  P-gp  MRP  OATP  Schisandra chinensis
+ulcerative colitis  Crohn&#x02019;s disease  vedolizumab  MLN0002  MLN-02  LDP-02  anti-&#x003b1;4&#x003b2;7
+immunosuppression  risk factors  cyclosporine A  tacrolimus  azathioprine  mycophenolate mofetil  mTOR inhibitor  steroids
+Ts65Dn  pharmacotherapy  clinical trials  Hsa21
+prostacyclin  corrected QT  TQT  selexipag  moxifloxacin
+cryptococcosis  cerebellar  central nervous system  magnetic resonance imaging  immunosuppressive
+5-HT<sub>3</sub> receptor antagonists  NK-1 receptor antagonists  palonosetron  netupitant  chemotherapy-induced nausea and vomiting
+surgical margin  hepatectomy  cholangiocarcinoma
+alpha hydroxy acids  antiaging  nicotinamide  vitamin C  vitamin E  profilometry  cutometer
+home telecare  Alzheimer&#x02019;s disease  mild cognitive impairment  caregiver  cognitive stimulation
+Traumatic knee complaint  General practice  Magnetic resonance imaging  Randomised controlled non-inferiority trial  Cost-utility  Cost-effectiveness
+Collagen I  3 dimensional (3D) collagen gel culture  Doxycycline  Matrix metalloproteinase  PCK rats  Polycystic kidney disease
+Aging  Cardiovascular diseases  Guidelines  Shared decision making
+Social science research  Globalisation and healthcare  India  State of the art literature review  Transnational  Trade
+Neuropathic pain  Chronic pain  Epidemiology  S-LANSS  Refractory
+Asthma  Children  Erythrocytes  Magnesium
+Metabolic syndrome  prevalence  stroke
+SSRs  Colonisation events  Exotic species  Molecular diversity  Weeds
+Metacarpal bones  Fracture fixation  Intramedullary  Fractures  closed
+Mycobacterium infections  nontuberculous; Soft-tissue infections; Early diagnosis; Antibiotics  antitubercular
+Paget disease  extramammary; Mohs surgery; Frozen sections
+Gynecomastia  Male  Breast  Mastectomy  Nipples
+Metatranscriptomics  Sequence processing  Data reduction  Clustering  Assembly
+Air pollution  Diesel engine technology  Diesel exhaust particles  Human carcinogen
+Progressive Supranuclear Palsy  Hummingbird Sign  Midbrain
+Toxoplasma gondii  Oocysts  Semi-nested PCR  Soil
+Comparative study  diabetes mellitus  pulmonary tuberculosis  radiology
+adaptation  adult  body temperature regulation  eccrine glands  exercise  physiopathology  sweating  wheelchairs
+knee injury  anterior cruciate ligament  surface electromyography  stretch reflex  vibration  muscle weakness
+ovarian clear cell carcinoma  CD44  CD47  c-met  immunohistochemistry
+Inflammatory bowel disease  Irritable bowel syndrome  Infectious gastroenteritis  Crohn&#x02019;s disease  Ulcerative colitis
+Rheumatoid arthritis  Foot  Podiatry  Surgery  Orthopaedic surgery  Foot care  Access to service
+thymus  radiation  CD4<sup>+</sup>CD8<sup>+</sup> thymocytes  sensitivity  donor cells
+Hajj  pneumonia  Candida  Pseudomonas
+dietary fiber  degree of polymerization  physiological effects  Vahouny Symposium  Codex Alimentarius
+P
+Underweight  Weight gain  Growth  Dental caries  Dental decay  Tooth extraction  Dental extraction  Stepped wedge design  Cluster randomized trial  Clinical trial
+Amlodipine  Calcium channel blockers  Hypertension  Meta-analysis
+Follicular adenocarcinoma  Hurthle cell thyroid cancer  Distant metastases  Prognosis  Iodine
+Hepatitis B  Vaccination  Vertical infection transmission  Korea
+Transforming growth factor beta1  Pulmonary fibrosis  Response modifiers  Amphiregulin  Chitotriosidase
+Aging  Kidney  Renin-angiotensin system
+Chronic kidney failure  Hemoglobins  Erythropoiesis
+data integration  database federation  database interoperation  neuroinformatics  biomedical informatics
+Database  Expressed sequence tag  Metabolic network  Oil crop seeds
+crystal structure  hydantoin compounds  hydrogen bonding  spiro&#x000ad;[1-benzo&#x000ad;thio&#x000ad;pyran-4 4&#x02032;-imidazolidine]
+prostate cancer  active surveillance  radical prostatectomy  nomogram  pathology  United Kingdom
+cancer  tumour microenvironment  cell&#x02013;cell interactions  stromal cells
+E
+hemodialysis  uremia  CYP3A4  CYP2D6  metabolism
+clopidogrel  pharmacogenetics  CYP450  platelet aggregation
+apixaban  oral anticoagulant  factor Xa inhibitor  pharmacokinetics  pharmacodynamics
+arthritis  chronic Lyme disease (CLD)  ELISA  erythema migrans  ixodid ticks  Lyme disease  post-treatment Lyme disease syndrome (PTLDS)  Western blotting
+pre-exposure prophylaxis  toxic neuropathy  NRTI
+placenta previa  placenta accreta  maternal outcome  neonatal outcome
+Thoracoscopy  anaesthesia  paeditaric
+Appendicectomy  Open  Laparoscopic
+Diabetes mellitus  Anti-oxidant  Cardiac remodeling  Papillary muscle  Rat  Flavonoid
+symptoms  monitor  validation  cognitive  psychological  functional
+elderly inpatients  Functional Independence Measure (FIM)  oral examination  geriatric disease
+behavioral problem  illness trajectory  role strain  caregiving activity  preparedness
+exercise  pain  comorbidity  lifestyle  sedentary  behavior
+glucocorticoid-induced leucine zipper  therapeutic potential  translational impact  chronic inflammation
+Cell differentiation  Air pollution  Particulate matter  Anoxia
+Reproductive health  Place of delivery  Pakistan  Logistic regression
+Breast cancer  Next-generation sequencing  Whole-genome sequencing  Molecular profiling  Personalized medicine  Heterogeneity
+Cardiovascular diseases  chronic diseases  cohort studies  developing countries  diabetes mellitus  occupational health  social determinants of health  obesity
+EphB1 receptor tyrosine kinase  Nck  Caskin1  SH3 domain  CD spectrum

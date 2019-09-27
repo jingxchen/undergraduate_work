@@ -1,0 +1,408 @@
+%% Part A
+\documentclass[10pt]{article}
+
+%% Part B(包) 
+\usepackage{fullpage}  
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+\usepackage{CJK} 
+\usepackage{listings} 
+\usepackage{xcolor}
+\usepackage{amsmath}
+
+
+%% Part C(代码样式)
+\lstset{keywordstyle=\color{blue}, %%设置关键字颜色  
+        commentstyle=\color[cmyk]{1,0,1,0}, %% 设置注释颜色  
+        frame=single, %% 设置边框格式  
+        escapeinside=``, %% 逃逸字符(1左面的键)，用于显示中文  
+        extendedchars=false, %% 解决代码跨页时，章节标题，页眉等汉字不显示的问题  
+        xleftmargin=2em,xrightmargin=2em, aboveskip=1em,, %% 设置边距   
+        showspaces=false %% 不显示空格  
+        tabsize=4, %% 设置tab空格数 
+       } 
+
+%% Part D(正文)
+\begin{document}
+
+ \begin{CJK}{UTF8}{gbsn} %% 使用中文 
+ 
+ \title{Homework 3}  
+\author{陈敬贤 15338013 统计学}
+\maketitle 
+
+
+\section{Monte Carlo average of log-likelihood}
+The original form of complete data likelihood function as:
+\[L(\Omega|Y_{i,j},U_{i},Z_{1,i},Z_{2,i})=\prod^{n}_{i=1}\prod^{2}_{c=1}\left\lbrace \pi_{c}f_{c}(Z_{c,i})\left[ \prod^{T}_{j=1}f_{c}(Y_{i,j}|Z_{c,i})\right] \right\rbrace^{w_{ic}} \]
+where $f_c(Z_{c,i})$is the density function of Normal distribution, $f_c(Y_{i,j}|Z_{c,i})=P_{ij}^{Y_{ij}}(1-P_{ij})^{1-Y_{ij}}$
+\\$w_{ic}$is the dummy variable of $U_{i}$,  i.e:
+\\\begin{center}
+$w_{ic}=1$
+\end{center}
+\begin{flushright}
+if subject i belong to cluster c;
+\end{flushright}
+\begin{center}
+$w_{ic}=0$
+\end{center}
+\begin{flushright}
+otherwise.
+\end{flushright}
+\medskip
+\noindent To set up the EM algorithm, consider the random effects, U and Z, to be the missing data. The complete data, Q, is then $Q=(Y,U,Z)$, and the complete-data log-likelihood using the Monte Carlo average to estimate is given by:
+\begin{small}
+\[
+\begin{split}
+Q(\Omega,\Omega^{(m)})=&\frac{1}{K}\sum^{K}_{k=1}\sum^{n}_{i=1}w_{i1}\left\lbrace  log(\pi_1)-\frac{1}{2}log(2\pi\sigma_1^{2})-\frac{Z_{1,i}^{(k)}}{2\sigma_1^{2}}+\sum_{j=1}^{10}\left[ Y_{ij}(\beta_1X_{1,ij}+Z_{1,i}^{(k)})-log\left[ 1+exp(\beta_1X_{1,ij}+Z_{1,i}^{(k)})\right]\right]  \right\rbrace \\&+\frac{1}{K}\sum^{K}_{k=1}\sum^{n}_{i=1}(1-w_{i1})\left\lbrace  log(1-\pi_1)-\frac{1}{2}log(2\pi\sigma_2^{2})-\frac{Z_{2,i}^{(k)}}{2\sigma_2^{2}}+\sum_{j=1}^{10}\left[ Y_{ij}(\beta_2X_{2,ij}+Z_{2,i}^{(k)})-log\left[ 1+exp(\beta_2X_{2,ij}+Z_{2,i}^{(k)})\right]\right]  \right\rbrace 
+\end{split}
+\]
+\end{small}
+\section{Details of the MCEM algorithm steps:}
+Incorporating the Metropolis-Hastings step and Gibbs-sampling into the EM algorithm gives an MCEM algorithm as follows:
+\bigskip
+\subsection{Initial Parameters}
+\textbf{(1)}Choose starting values $\Omega^{(0)}=\left\lbrace \beta_1^{(0)}=0.9,\beta_2^{(0)}=4,\sigma_1^{(0)}=1.5,\sigma_2^{(0)}=9.5,\pi_1^{(0)}=0.5\right\rbrace $. Set m=1.
+\subsection{Gibbs-sampling and Metropolis-Hastings Algorithms}
+\textbf{(2)}Using Gibbs-sampling to update $(z,u)$, steps are as follows:
+\medskip
+\subsubsection{Generate Z (using Metropolis-Hastings algorithm)}
+\hspace*{1cm}\textbf{a. Generate $Z^{(m)}$ from the conditional probability $P(Z|Y,\Omega^{(m-1)},U^{(m-1)})$, in details:}
+\[
+\begin{split}
+P(Z|Y,\Omega^{(m-1)},U^{(m-1)})=&\frac{P(Z|\Omega^{(m-1)},U^{(m-1)})*P(\Omega^{(m-1)},U^{(m-1)})*P(Y|Z,\Omega^{(m-1)},U^{(m-1)})}{P(\Omega^{(m-1)},U^{(m-1)},Y)}\\&
+\end{split}\]
+\medskip
+\indent where \begin{equation}
+P(Z|\Omega^{(m-1)},U^{(m-1)})=dnorm(Z,0,\sigma)
+\end{equation}
+\begin{equation}
+P(\Omega^{(m-1)},U^{(m-1)})=\pi^{(m-1)}(U)
+\end{equation}
+\begin{equation}
+\begin{split}
+P(Y|Z,\Omega^{(m-1)},U^{(m-1)})&=P_{ij}^{Y_{ij}}(1-P_{ij})^{1-Y_{ij}}\\&=\frac{exp^{Y_{ij}}(\beta_cX_{c,ij}+Z_{c,i})}{1+exp(\beta_cX_{c,ij}+Z_{c,i})}\\
+&\approx \frac{exp(\beta_c\bar{X}_{c,i}+Z_{c,i})}{1+exp(\beta_c\bar{X}_{c,i}+Z_{c,i})}
+\end{split}
+\end{equation}
+\textbf{Remark:} 
+\\Because the dimension of Z is $K*n$, which is not equal to the dimension of X and Y $(K*n*T)$, in order to let their dimensions be equal, in the equation we replace $X_{c,ij}$ with $\bar{X}_{c,i}$ (the row mean of $X_{c,ij}$) and disregard $Y_{ij}$ term.  
+\bigskip
+\\Also, because the denominator of $P(Z|\Omega^{(m-1)},U^{(m-1)})$ is hard to calculate, here we use \textbf{Metropolis-Hastings method} to generate Z:
+
+\bigskip
+\textbf{1.} Specify the proposal distribution $g(z)$ as the Normal distribution with mean $Z[i-1]$ and variance $\sigma^2_c$.
+
+\textbf{2.} Then the accept probability is 
+\begin{equation}
+\alpha(Z,Z^*)=min\left\lbrace 1,\frac{P(Z^*|\Omega^{(m-1)},U^{(m-1)})}{P(Z|\Omega^{(m-1)},U^{(m-1)})}\right\rbrace
+\end{equation}
+\indent where $Z^*$ is the new value generated.
+\\\indent and the second term in braces in (4) simplifies to
+\begin{equation}
+\begin{split}
+\frac{P(Z^*|\Omega^{(m-1)},U^{(m-1)})}{P(Z|\Omega^{(m-1)},U^{(m-1)})}&=\frac{P(Z^*|\Omega^{(m-1)},U^{(m-1)})*P(\Omega^{(m-1)},U^{(m-1)})*P(Y|Z^*,\Omega^{(m-1)},U^{(m-1)})}{P(Z|\Omega^{(m-1)},U^{(m-1)})*P(\Omega^{(m-1)},U^{(m-1)})*P(Y|Z,\Omega^{(m-1)},U^{(m-1)})}\\&=\frac{dnorm(Z^*,0,\sigma_c)*\frac{exp(\beta_c\bar{X}_{c,i}+Z^*_{c,i})}{1+exp(\beta_c\bar{X}_{c,i}+Z^*_{c,i})}}{dnorm(Z,0,\sigma_c)*\frac{exp(\beta_c\bar{X}_{c,i}+Z_{c,i})}{1+exp(\beta_c\bar{X}_{c,i}+Z_{c,i})}}
+\end{split}
+\end{equation}
+\bigskip
+\subsubsection*{relevant R coding:}
+\begin{lstlisting}[language=R]
+# F1 is the numerator of the simplified conditional probability of Z,
+# which is used to compute the accept probability
+F1 <- function(pai,sigma,z,x,beta){
+  return(pai*dnorm(z,0,sigma)*(exp(beta*x+z)/(1+exp(beta*x+z))))
+}
+  
+# MH is the function according to the Metropolis-Hastings algorithm 
+MH<-function(x,beta,sigma,pai){
+    z<-numeric(1000)           # length of the chain
+    z[1]<-rnorm(1,0,sigma)
+    for(i in 2:1000){
+      zt<-z[i-1]
+      Z<-rnorm(1,zt,sigma)     # proposal distribution
+      num<-F1(pai,sigma,Z,x,beta)
+      den<-F1(pai,sigma,zt,x,beta)
+      u<-runif(1)              # for accept/reject step
+      ifelse(u<(num/den),z[i]<-Z,z[i]<-zt)
+    }
+    z1<-sample(z[-c(1:100)],1) # to randomly select a value from the chain
+    return(z1)
+  }
+
+
+# generate #500*100 z from two chain
+Z1 <- matrix(0,nrow = K,ncol=n)
+Z2 <- matrix(0,nrow = K,ncol=n)
+
+# to alter the dimension of X
+Xmean <- apply(X, 1, mean)
+
+for(k in 1:K){
+ for(i in 1:n){
+
+     Z1[k,i] <- MH(Xmean[i],beta1[m-1],sigma1[m-1],pu[m-1])
+     Z2[k,i] <- MH(Xmean[i],beta2[m-1],sigma2[m-1],pu[m-1])
+  
+   
+ }
+}
+
+\end{lstlisting}
+\subsubsection{Generate U (using Bayesian Formula)}
+\hspace*{1cm}\textbf{b. Generate $U^{(m)}$ from the Bernoulli distribution with success probability $P(U=1|Y,Z^{(m)},\Omega^{(m-1)})$, here we use Bayesian Formula to change the form, in details:}
+\begin{small}
+\begin{equation}
+\begin{split}
+P(U=1|Y,Z^{(m)},\Omega^{(m-1)})&=\frac{P(Y|U=1,Z^{(m)},\Omega^{(m-1)})*\pi(U)}{P(Y|U=1,Z^{(m)},\Omega^{(m-1)})*\pi(U)+P(Y|U=2,Z^{(m)},\Omega^{(m-1)})*(1-\pi(U))}
+\\&=\frac{\frac{1}{K}\sum_{k=1}^K\sum_{i=1}^n\sum_{j=1}^Tw_{i1}*P(Y_{ij}|U=1,Z_{1,i}^{(k,m)},\Omega^{(m-1)})*\pi(U)}{\frac{1}{K}\sum_{k=1}^K\sum_{i=1}^n\sum_{j=1}^T(w_{i1}P(Y_{ij}|U=1,Z_{1,i}^{(k,m)},\Omega^{(m-1)})\pi(U)+w_{i2}P(Y_{ij}|U=2,Z_{2,i}^{(k,m)},\Omega^{(m-1)})(1-\pi(U)))}
+\end{split}
+\end{equation}
+\end{small}
+where
+\begin{flushleft}
+$\pi(U)$ here refers to the prior distribution of U, that is $P(U=1|Y,Z^{(m-1)},\Omega^{(m-2)})$;
+\\$P(Y_{ij}|U=c,Z_{c,i}^{(k,m)},\Omega^{(m)})=\frac{exp^{Y_{ij}}(\beta_cX_{c,ij}+Z^{(k,m)}_{c,i})}{1+exp(\beta_cX_{c,ij}+Z^{(k,m)}_{c,i})}$;
+\\$w_{ic}=1$, if subject i belong to cluster c;
+\\$w_{ic}=0$, otherwise.
+\end{flushleft}
+\bigskip
+\subsubsection*{relevant R coding:}
+\begin{lstlisting}[language=R]
+#generate u(update pu)
+num <- 0   # to record the conditional probability of Y with U=1
+den <- 0   # to record the conditional probability of Y with U=2
+for(k in 1:K){
+ for(i in 1:n){
+  for(j in 1:T){
+      num <- num+exp(beta1[m-1]*X[i,j]+Z1[k,i])^Y[i,j]/
+             (1+exp(beta1[m-1]*X[i,j]+Z1[k,i]))
+      den <- den+exp(beta2[m-1]*X[i,j]+Z2[k,i])^Y[i,j]/
+             (1+exp(beta2[m-1]*X[i,j]+Z2[k,i]))
+
+  }
+ }
+}
+Num <- num*pu[m-1]   # numerator of the result  
+Den <- num*pu[m-1]+den*(1-pu[m-1]) # denominator of the result 
+pu[m] <- Num/Den
+
+# to generate u according to the updated pu
+U <- sample(c(1,2),size = n,replace = T,prob = c(pu[m],1-pu[m]))
+wi1[m,U==1] <- 1
+\end{lstlisting}
+\section{Update Parameters \& Accelerate Method}
+\textbf{(3)}After generate K values, $Z^{(1)},Z^{(2)},...,Z^{(K)}$, and the corresponding U from $f(U,Z|Y,\Omega)$ using the Gibbs-sampling incorporating Metropolis-Hastings algorithm described previously:
+\bigskip
+\\1 Choose $\sigma_c^{(m)}$ and $\beta_c^{(m)}$ to maximize a Monte Carlo estimate $Q(\Omega,\Omega^{(m)})$
+\\2 Set $m=m+1$.
+
+\subsection{Update $\sigma_c$}
+In this process, with respect to $\sigma_c$, we only need to calculate the derivative term $\frac{\partial Q(\Omega,\Omega^{(m)})}{\partial \sigma_c}$
+then:
+\\$\because$
+\[\frac{\partial Q(\Omega,\Omega^{(m)})}{\partial \sigma_c^{(m+1)}}=0\]
+$\therefore$
+\[\sigma_c^{(m+1)}=\sqrt{\frac{\frac{1}{K}\sum_{k=1}^K\sum_{i=1}^nw_{ic}*Z^{2\ (m,k)}_{c,i}}{\sum_{i=1}^{n}w_{ic}}}\]
+\subsubsection*{relevant R coding:}
+\begin{lstlisting}[language=R]
+# update sigma 1 & 2
+# num1 is the numerator of sigma1
+# num2 is the numerator of sigma2
+num1 <- num2 <- 0
+for(k in 1:K){
+  for(i in 1:n){
+      num1 <- num1+wi1[m-1,i]*Z1[k,i]^2
+      num2 <- num2+(1-wi1[m-1,i])*Z2[k,i]^2
+  }
+}
+sigma1[m] <- sqrt(1/K*num1/sum(wi1[m-1,]))
+sigma2[m] <- sqrt(1/K*num2/sum(1-wi1[m-1,]))
+
+
+\end{lstlisting}
+\subsection{Update $\beta_c$ \& Newton-Raphson Method}
+As the first-order derivative term of $\beta_c$ is as follows:
+\[\frac{\partial Q(\Omega,\Omega^{(m)})}{\partial \beta_c}=\frac{1}{K}\sum_{k=1}^K\sum_{i=1}^nw_{ic}*\sum_{j=1}^T(Y_{ij}*X_{c,ij}-X_{c,ij}*\frac{exp(\beta_c*X_{c,ij}+Z_{c,i}^{(k)})}{1+exp(\beta_c*X_{c,ij}+Z_{c,i}^{(k)})}\]
+We can not get the explicit solution of $\beta_c$ from the equation above;
+\medskip
+\\So, here we are going to implement the Newton-Raphson method to update $\beta_c$;
+To achieve our goal, we need to calculate the second-order derivative term of $\beta_c$, that is:
+\[\frac{\partial^2 Q(\Omega,\Omega^{(m)})}{\partial \beta_c^2}=\frac{1}{K}\sum_{k=1}^K\sum_{i=1}^n-w_{ic}*\sum_{j=1}^T\frac{X_{c,ij}^2*exp(\beta_c*X_{c,ij}+Z_{c,i}^{(k)})}{(1+exp(\beta_c*X_{c,ij}+Z_{c,i}^{(k)}))^2}\]
+\medskip
+\\We expand $\frac{\partial Q(\Omega,\Omega^{(m)})}{\partial \beta_c}$ as a function of $\beta_c$ around the value $\beta_c^{(m)}$ gives:
+\[\frac{\partial Q(\Omega,\Omega^{(m)})}{\partial \beta_c^{(m+1)}}\cong\frac{\partial Q(\Omega,\Omega^{(m)})}{\partial \beta_c}\vert_{\beta_c=\beta_c^{(m)}}+\frac{\partial^2 Q(\Omega,\Omega^{(m)})}{\partial \beta_c^2}\vert_{\beta_c=\beta_c^{(m)}}(\beta_c^{(m+1)}-\beta_c^{(m)})=0\]
+$\therefore$
+\[\beta_c^{(m+1)}=\beta_c^{(m)}-\dfrac{\frac{\partial Q(\Omega,\Omega^{(m)})}{\partial \beta_c^{(m)}}}{\frac{\partial^2 Q(\Omega,\Omega^{(m)})}{\partial \beta_c^{(m)2}}}\]
+\subsubsection*{relevant R coding:}
+\begin{lstlisting}[language=R]
+#update beta 1&2
+# s1 is the first-order derivative of beta1
+# s2 is the second-order derivative of beta1
+# s3 is the first-order derivative of beta2
+# s4 is the second-order derivative of beta2
+s1<-s2<-s3<-s4<-0
+for(k in 1:K){
+  for(i in 1:n){
+    for(j in 1:T){
+      s1 <- s1+wi1[m-1,i]*(Y[i,j]*X[i,j]-X[i,j]*exp(beta1[m-1]*X[i,j]+Z1[k,i])
+            /(1+exp(beta1[m-1]*X[i,j]+Z1[k,i])))
+      s2 <- s2-wi1[m-1,i]*(X[i,j]^2*exp(beta1[m-1]*X[i,j]+Z1[k,i])
+            /(1+exp(beta1[m-1]*X[i,j]+Z1[k,i]))^2)
+      s3 <- s3+(1-wi1[m-1,i])*(Y[i,j]*X[i,j]-X[i,j]*exp(beta2[m-1]*X[i,j]             +Z2[k,i])/(1+exp(beta2[m-1]*X[i,j]+Z2[k,i])))
+      s4 <- s4+(wi1[m-1,i]-1)*(X[i,j]^2*exp(beta2[m-1]*X[i,j]+Z2[k,i])
+            /(1+exp(beta2[m-1]*X[i,j]+Z2[k,i]))^2)
+    }
+  }
+}
+beta1[m] <- beta1[m-1]-s1/s2
+beta2[m] <- beta2[m-1]-s3/s4
+\end{lstlisting}
+\section{Conclusion \& Convergence Rule}
+\textbf{(4)}If convergence is achieved, then declare $\beta_c^{(m)}$, $\sigma_c^{(m)}$, $\pi^{(m)}$ to be MLE's; otherwise, return to Step (2).
+\bigskip
+\\Here I define the convergence rule as $|\Omega^{(m)}-\Omega^{(m-1)}|\leq0.1$
+\section{Computational Results by R}
+Because it will cost such a long time to set K=500 and iterate many times, here I obtain the result with K=50, iteration times=10:
+\subsection{result}
+
+%% 插入图片
+\begin{figure}[ht]
+\centering
+  \includegraphics[width=8cm]{result} %% 图片需放在Latex生成文件同一目录
+  \caption{result}
+\label{fig:label}
+\end{figure}
+\section{Attachment: R codes}
+\begin{lstlisting}[language=R]
+# initial parameter
+M<-200;T<-10;n<-100;
+beta1<-beta2 <- pu <- sigma1 <- sigma2 <- numeric(M)
+beta1[1]<-0.9;beta2[1]<-4;
+pu[1]<-0.5;sigma1[1]<-1.5;sigma2[1]<-9.5;K<-50
+
+# generate fixed effect X
+X<-matrix(rnorm(1000,0,1),n,T)
+X1<-X2<-matrix(0,n,T)
+U <- sample(c(1,2),size = n,replace = T,prob = c(pu[1],1-pu[1]))
+X1[U==1,] <- X[U==1,]
+X2[U==2,] <- X[U==2,]
+wi1 <- matrix(0,nrow=M,ncol=n)
+wi1[1,U==1] <- 1
+
+
+
+
+#generate Y
+U_true <- sample(c(1,2),size = n,replace = T,prob = c(0.6,0.4))
+X1_true <- X[U_true==1,]
+X2_true <- X[U_true==2,]
+Z1_true <- rnorm(length(X1_true),0,2)
+Z2_true <- rnorm(length(X2_true),0,10)
+Y1 <- ifelse(exp(X1_true+Z1_true)/(1+exp(X1_true+Z1_true))>0.5,1,0)
+Y2 <- ifelse(exp(5*X2_true+Z2_true)/(1+exp(5*X2_true+Z2_true))>0.5,1,0)
+Y<-matrix(0,nrow=100,ncol=10)
+Y[U_true==1,]<-Y1
+Y[U_true==2,]<-Y2
+
+
+for(S in 1:M){    # M simulation
+flag<-1           # for convergence decision
+while(flag==1){
+  
+  
+F1 <- function(pai,sigma,z,x,beta){
+  return(pai*dnorm(z,0,sigma)*(exp(beta*x+z)/(1+exp(beta*x+z))))
+}
+  
+
+MH<-function(x,beta,sigma,pai){
+    z<-numeric(1000)
+    z[1]<-rnorm(1,0,sigma)
+    for(i in 2:1000){
+      zt<-z[i-1]
+      Z<-rnorm(1,zt,sigma)
+      num<-F1(pai,sigma,Z,x,beta)
+      den<-F1(pai,sigma,zt,x,beta)
+      u<-runif(1)
+      ifelse(u<(num/den),z[i]<-Z,z[i]<-zt)
+    }
+    z1<-sample(z[-c(1:100)],1)
+    return(z1)
+  }
+# generate #500*100 z
+Z1 <- matrix(0,nrow = K,ncol=n)
+Z2 <- matrix(0,nrow = K,ncol=n)
+
+Xmean <- apply(X, 1, mean)
+for(k in 1:K){
+ for(i in 1:n){
+
+     Z1[k,i]<-MH(Xmean[i],beta1[m-1],sigma1[m-1],pu[m-1])
+     Z2[k,i]<-MH(Xmean[i],beta2[m-1],sigma2[m-1],pu[m-1])
+  
+   
+ }
+}
+
+#generate u(update pai)
+num <- 0
+den <- 0
+for(k in 1:K){
+ for(i in 1:n){
+  for(j in 1:T){
+      num <- num+exp(beta1[m-1]*X[i,j]+Z1[k,i])^Y[i,j]/(1+exp(beta1[m-1]*X[i,j]+Z1[k,i]))
+      den <- den+exp(beta2[m-1]*X[i,j]+Z2[k,i])^Y[i,j]/(1+exp(beta2[m-1]*X[i,j]+Z2[k,i]))
+
+  }
+ }
+}
+Num <- num*pu[m-1] 
+Den <- num*pu[m-1]+den*(1-pu[m-1])
+pu[m] <- Num/Den
+U <- sample(c(1,2),size = n,replace = T,prob = c(pu[m],1-pu[m]))
+wi1[m,U==1] <- 1
+
+
+#update sigma 1 & 2
+num1 <- num2 <- 0
+for(k in 1:K){
+  for(i in 1:n){
+      num1 <- num1+wi1[m-1,i]*Z1[k,i]^2
+      num2 <- num2+(1-wi1[m-1,i])*Z2[k,i]^2
+  }
+}
+sigma1[m] <- sqrt(1/K*num1/sum(wi1[m-1,]))
+sigma2[m] <- sqrt(1/K*num2/sum(1-wi1[m-1,]))
+
+
+#update beta 1&2
+s1<-s2<-s3<-s4<-0
+for(k in 1:K){
+  for(i in 1:n){
+    for(j in 1:T){
+      s1 <- s1+wi1[m-1,i]*(Y[i,j]*X[i,j]-X[i,j]*exp(beta1[m-1]*X[i,j]+Z1[k,i])/(1+exp(beta1[m-1]*X[i,j]+Z1[k,i])))
+      s2 <- s2-wi1[m-1,i]*(X[i,j]^2*exp(beta1[m-1]*X[i,j]+Z1[k,i])/(1+exp(beta1[m-1]*X[i,j]+Z1[k,i]))^2)
+      s3 <- s3+(1-wi1[m-1,i])*(Y[i,j]*X[i,j]-X[i,j]*exp(beta2[m-1]*X[i,j]+Z2[k,i])/(1+exp(beta2[m-1]*X[i,j]+Z2[k,i])))
+      s4 <- s4+(wi1[m-1,i]-1)*(X[i,j]^2*exp(beta2[m-1]*X[i,j]+Z2[k,i])/(1+exp(beta2[m-1]*X[i,j]+Z2[k,i]))^2)
+    }
+  }
+}
+beta1[m] <- beta1[m-1]-s1/s2
+beta2[m] <- beta2[m-1]-s3/s4
+
+#convergence rule
+while(abs(beta1[m]-beta1[m-1])<=0.5 & abs(beta2[m]-beta2[m-1])<=0.5 & abs(sigma1[m]-sigma1[m-1])<=0.5 & abs(pu[m]-pu[m-1])<=0.5)
+{flag<-0}
+}
+}
+\end{lstlisting}
+
+
+
+
+
+\end{CJK}
+
+
+\end{document}  
